@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+/* Desktop Slider */
 .slider-container {
     position: relative;
     max-width: 100%;
@@ -75,8 +76,6 @@ button {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-top: 8px;
-    margin-bottom: 30px;
     margin: 0 auto;
 }
 
@@ -232,4 +231,114 @@ button:hover {
 .quote-icon img {
     width: 40px;
     height: 40px;
+}
+
+/* Mobile Slider Styles */
+.slider-container-mobile {
+    display: none; /* Hidden by default; shown with media queries */
+    position: relative;
+    max-width: 100%;
+    padding: 20px;
+    background-color: #1a1a1a;
+}
+
+@media only screen and (max-width: 768px) {
+    .slider-container {
+        display: none; /* Hide desktop slider on mobile */
+    }
+    .slider-container-mobile {
+        display: block; /* Show mobile slider */
+    }
+}
+
+.slider-mobile {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.slide {
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+    color: white;
+    text-align: left; /* Left-align text */
+    background-color: #222;
+    padding: 15px; /* Add padding for better readability */
+}
+
+.mobile-glass-effect {
+    background: rgba(46, 49, 59, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.mobile-casestudy-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px; /* Add space below the image */
+}
+
+.mobile-horizontal-line {
+    width: 80%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: 10px 0; /* Adjust margins for left-aligned content */
+}
+
+/* Headings and Text Left Alignment */
+.slide h1 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.info-section-mobile {
+    display: flex;
+    flex-direction: column; /* Stack items vertically for left alignment */
+    width: 100%;
+}
+
+.info-left-mobile, .info-right-mobile {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-left-mobile p, .info-right-mobile p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+/* Make sure all paragraphs are left aligned */
+.slide p {
+    font-size: 1rem;
+    margin: 5px 0;
+    text-align: left;
+}
+
+.mobile-navigation {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+button.mobile-prev, button.mobile-next {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 24px;
+}
+
+button.mobile-prev {
+    margin-left: 10px;
+}
+
+button.mobile-next {
+    margin-right: 10px;
 }
