@@ -44,3 +44,25 @@ window.addEventListener("resize", () => {
 // Manually call moveSlides to control with buttons
 document.querySelector(".prev").addEventListener("click", () => moveSlides(-1));
 document.querySelector(".next").addEventListener("click", () => moveSlides(1));
+
+
+// JavaScript for Mobile Slider Navigation
+let mobileSlideIndex = 0;
+
+function showMobileSlide(index) {
+    const slides = document.querySelectorAll('.slider-mobile .slide');
+    if (index >= slides.length) mobileSlideIndex = 0;
+    if (index < 0) mobileSlideIndex = slides.length - 1;
+
+    slides.forEach((slide, i) => {
+        slide.style.transform = `translateX(${(i - mobileSlideIndex) * 100}%)`;
+    });
+}
+
+function moveMobileSlides(direction) {
+    mobileSlideIndex += direction;
+    showMobileSlide(mobileSlideIndex);
+}
+
+// Initialize first slide view
+showMobileSlide(mobileSlideIndex);
