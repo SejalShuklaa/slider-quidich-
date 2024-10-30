@@ -235,7 +235,7 @@ button:hover {
 
 /* Mobile Slider Styles */
 .slider-container-mobile {
-    display: none; /* Hidden by default; shown with media queries */
+    display: none; /* Shown only in mobile view */
     position: relative;
     max-width: 100%;
     padding: 20px;
@@ -243,12 +243,8 @@ button:hover {
 }
 
 @media only screen and (max-width: 768px) {
-    .slider-container {
-        display: none; /* Hide desktop slider on mobile */
-    }
-    .slider-container-mobile {
-        display: block; /* Show mobile slider */
-    }
+    .slider-container { display: none; } /* Hide desktop slider on mobile */
+    .slider-container-mobile { display: block; } /* Show mobile slider */
 }
 
 .slider-mobile {
@@ -265,54 +261,29 @@ button:hover {
     color: white;
     text-align: left; /* Left-align text */
     background-color: #222;
-    padding: 15px; /* Add padding for better readability */
-}
-
-.mobile-glass-effect {
-    background: rgba(46, 49, 59, 0.8);
     padding: 15px;
-    border-radius: 10px;
-    width: 100%;
 }
 
 .mobile-casestudy-img {
     width: 100%;
     height: auto;
     border-radius: 10px;
-    margin-bottom: 10px; /* Add space below the image */
+    margin-bottom: 10px;
 }
 
 .mobile-horizontal-line {
     width: 80%;
     height: 2px;
     background-color: rgba(255, 255, 255, 0.3);
-    margin: 10px 0; /* Adjust margins for left-aligned content */
+    margin: 10px 0;
 }
 
-/* Headings and Text Left Alignment */
 .slide h1 {
     font-size: 1.2rem;
     margin-bottom: 10px;
 }
 
-.info-section-mobile {
-    display: flex;
-    flex-direction: column; /* Stack items vertically for left alignment */
-    width: 100%;
-}
-
-.info-left-mobile, .info-right-mobile {
-    display: flex;
-    flex-direction: column;
-}
-
-.info-left-mobile p, .info-right-mobile p {
-    margin: 5px 0;
-    font-size: 1rem;
-}
-
-/* Make sure all paragraphs are left aligned */
-.slide p {
+.info-section-mobile p {
     font-size: 1rem;
     margin: 5px 0;
     text-align: left;
@@ -333,12 +304,10 @@ button.mobile-prev, button.mobile-next {
     cursor: pointer;
     color: white;
     font-size: 24px;
+    outline: none;
 }
 
-button.mobile-prev {
-    margin-left: 10px;
-}
+button.mobile-prev { margin-left: 10px; }
+button.mobile-next { margin-right: 10px; }
 
-button.mobile-next {
-    margin-right: 10px;
-}
+button:hover { opacity: 0.8; }
