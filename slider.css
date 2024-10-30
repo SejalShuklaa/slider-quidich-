@@ -281,6 +281,7 @@ button:hover {
 .slide h1 {
     font-size: 1.2rem;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .info-section-mobile p {
