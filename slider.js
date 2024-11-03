@@ -49,20 +49,36 @@ document.querySelector(".next").addEventListener("click", () => moveSlides(1));
 // JavaScript for Mobile Slider Navigation
 let mobileSlideIndex = 0;
 
+// Function to show the current slide
 function showMobileSlide(index) {
     const slides = document.querySelectorAll('.slider-mobile .slide');
-    if (index >= slides.length) mobileSlideIndex = 0;
-    if (index < 0) mobileSlideIndex = slides.length - 1;
+    const totalSlides = slides.length;
 
+    // Ensure the index stays within bounds
+    if (index >= totalSlides) {
+        mobileSlideIndex = 0;
+    } else if (index < 0) {
+        mobileSlideIndex = totalSlides - 1;
+    } else {
+        mobileSlideIndex = index;
+    }
+
+    // Correctly position all slides
     slides.forEach((slide, i) => {
         slide.style.transform = `translateX(${(i - mobileSlideIndex) * 100}%)`;
     });
 }
 
+// Function to move the slides
 function moveMobileSlides(direction) {
-    mobileSlideIndex += direction;
-    showMobileSlide(mobileSlideIndex);
+    showMobileSlide(mobileSlideIndex + direction);
 }
 
-// Initialize first slide view
-showMobileSlide(mobileSlideIndex);
+// Initialize with the first slide
+document.addEventListener("DOMContentLoaded", () => {
+    showMobileSlide(mobileSlideIndex);
+});
+
+// Add event listeners for buttons
+document.querySelector(".mobile-prev").addEventListener("click", () => moveMobileSlides(-1));
+document.querySelector(".mobile-next").addEventListener("click", () => moveMobileSlides(1));
