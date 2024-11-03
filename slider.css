@@ -642,3 +642,7 @@ button:hover {
     color: white; 
     text-decoration: none; 
 }
+
+.slide{
+    transform: translateX(0%);
+}
